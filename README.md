@@ -4,6 +4,13 @@ Python implementation to compare the optimal results found usign a SARSA/Q-Learn
 cliff walking game, presented in [Sutton, Richard S., and Andrew G. Barto. *Reinforcement learning: An introduction*. MIT press, 1998](http://incompleteideas.net/book/bookdraft2017nov5.pdf), Figure 6.4.
 
 With reinforcement leraning we face the problem of exploration and exploitation where this approaches fall to two classes: on-policy and off-policy.
+Dependencies:
+* Numpy
+* Matplotlib
+```
+python sarsa_qlearning.py
+```
+
 ___
 #### SARSA: On-policy TD Control
 First, learn action-value function rather than a state-value function. For an on-policy method, we estimate Q^π (s,a) for the current behaviour policy π and for all states s and actions a. 
