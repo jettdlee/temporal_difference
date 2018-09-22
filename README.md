@@ -11,7 +11,7 @@ We consider transitions from state-action pair to state-action pairs and learn v
 Formally, there are identical, they are both Markov chains with rewards. 
 The theorems assuring the convergence of state values under TD(0) also apply to the corresponding algorithm:
 
-Q(s_t,a_t )←Q(s_t,a_t )+α[r_(t+1)+γQ(s_(t+1),a_(t+1) )-Q(s_t,a_t)]
+![alt text](https://github.com/SirTune/temporal_difference/blob/master/image/sarsa.png "SARSA")
 
 Update is done after every transition from a non terminal state s_t, if s_(t+1) is terminal, then Q(s_(t+1),a_(t+1)) is defined as zero.
 This rule uses every element of the quintuple of events, (s_t,a_t,r_(t+1),s_(t+1),a_(t+1)), making up the transition from one state-action to the next. 
@@ -38,7 +38,8 @@ ___
 #### Q-Learning: Off-policy TD control
 Off-policy TD control algorithm known as Q-learning:
 
-Q(s_t,a_t )←Q(s_t,a_t )+α[r_(t+1)+γ  max┬a⁡〖Q(s_(t+1),a)-Q(s_t,a_t )〗 ]
+![alt text](https://github.com/SirTune/temporal_difference/blob/master/image/qlearning.png "Q-Learning")
+
 
 The learned action-value function Q directly approximates Q^*, the optimal action-value function, independent of the policy being followed. This simplifies the analysis of the algorithm and enabled early convergence. The policy still has an effect in that it determines which state-action pairs are visited and updated. However, the only requirements for convergence is that all pairs continue to be updated. 
 This is a minimal requirement in the sense that any method guaranteed to find optimal behaviour in the general case must require it. Under this assumption and a variant of the usual stochastic approximation conditions on the sequence of step-size parameters, Q has been shown to converge with probability 1 to Q^*.
