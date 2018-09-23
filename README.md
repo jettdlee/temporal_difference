@@ -1,9 +1,9 @@
 # Temporal Difference - SARSA/Q-Learning
-##### For Assignments COMP532 Machine Learning and BioInspired Optimisation, MSc Computer Science, University of Liverpool 
-Python implementation to compare the optimal results found usign a SARSA/Q-Learning approch to the
-cliff walking game, presented in [Sutton, Richard S., and Andrew G. Barto. *Reinforcement learning: An introduction*. MIT press, 1998](http://incompleteideas.net/book/bookdraft2017nov5.pdf), Figure 6.4.
 
-With reinforcement leraning we face the problem of exploration and exploitation where this approaches fall to two classes: on-policy and off-policy.
+Python implementation to compare the optimal results found using a SARSA/Q-Learning approach to the
+cliff walking game, presented in [Sutton, Richard S., and Andrew G. Barto. *Reinforcement learning: An introduction*. MIT Press, 1998](http://incompleteideas.net/book/bookdraft2017nov5.pdf), Figure 6.4.
+
+With reinforcement learning, we face the problem of exploration and exploitation where these approaches fall into two classes: on-policy and off-policy.
 
 Dependencies:
 * Numpy
@@ -39,7 +39,7 @@ Repeat (for each episode):
      until S is terminal
 ```
 One could use ε-greedy or ε-soft policies, Sarsa converges with probability 1 to an optimal policy and action-value function as long as all state-action pairs are visited an infinite number of times and the policy converges in the limit to the greedy policy.
-If a policy was never found that caused the agent to stay in the same state, then the next episode would never end. Step-by-step learning methods such as SARSA do not have this problem because they quickly learn during the episode that such polices are poor.
+If a policy was never found that caused the agent to stay in the same state, then the next episode would never end. Step-by-step learning methods such as SARSA do not have this problem because they quickly learn during the episode that such policies are poor.
 
 
 ___
@@ -49,7 +49,7 @@ Off-policy TD control algorithm known as Q-learning:
 ![alt text](https://github.com/SirTune/temporal_difference/blob/master/image/qlearning.png "Q-Learning")
 
 
-The learned action-value function Q directly approximates Q^*, the optimal action-value function, independent of the policy being followed. This simplifies the analysis of the algorithm and enabled early convergence. The policy still has an effect in that it determines which state-action pairs are visited and updated. However, the only requirements for convergence is that all pairs continue to be updated. 
+The learned action-value function Q directly approximates Q^*, the optimal action-value function, independent of the policy being followed. This simplifies the analysis of the algorithm and enabled early convergence. The policy still has an effect in that it determines which state-action pairs are visited and updated. However, the only requirements for convergence are that all pairs continue to be updated. 
 This is a minimal requirement in the sense that any method guaranteed to find optimal behaviour in the general case must require it. Under this assumption and a variant of the usual stochastic approximation conditions on the sequence of step-size parameters, Q has been shown to converge with probability 1 to Q^*.
 The rule updates a state-action pair, so the top node (root of the update), must be small, filled action node. Update is also from action nodes, maximizing over all those actions possible in the next state. Thus the bottom nodes of the backup diagram should be all action nodes. 
 ```
